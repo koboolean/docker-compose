@@ -1,0 +1,60 @@
+services:
+  #컨테이너 명
+  mysql000ex13:
+    #이미지 명
+    image: mysql:5.7
+    #사용할 네트워크
+    networks:
+      - redmine000net2
+    #사용할 볼륨, 마운트 위치
+    volumes:
+      - mysql000vol13:/var/lib/mysql
+    #restart 설정값
+    restart: always
+    #MySQL 설정
+    environment:
+      #루트 패스워드
+      MYSQL_ROOT_PASSWORD: myrootpass
+      #데이터베이스 명
+      MYSQL_DATABASE: redmine000db
+      #사용자 이름
+      MYSQL_USER: redmine000kun
+      #패스워드
+      MYSQL_PASSWORD: rkunpass
+  #컨테이너 명
+  redmine000ex14:
+    #의존관계
+    depends_on:
+      - mysql000ex13
+    #이미지 명
+    image: redmine
+    #사용할 네트워크
+    networks:
+      - redmine000net2
+    #사용할 볼륨, 마운트 위치
+    volumes:
+      - redmine000vol14:/usr/src/redmine/files
+    #포트 번호 설정
+    ports:
+      - 8086:3000
+    #재시작 설정
+    restart: always
+    #데이터 베이스 관련 정보
+    environment:
+      #데이터베이스 컨테이너 명
+      REDMINE_DB_MYSQL: mysql000ex13
+      #데이터베이스 명
+      REDMINE_DB_DATABASE: redmine000db
+      #데이터베이스 사용자 이름
+      REDMINE_DB_USERNAME: redmine000kun
+      #데이터베이스 패스워드
+      REDMINE_DB_PASSWORD: rkunpass
+networks:
+  #네트워크 이름
+  redmine000net2:
+volumes:
+  #MySQL 볼륨 이름
+  mysql000vol13:
+  #레드마인 볼륨 이름
+  redmine000vol14:
+   
