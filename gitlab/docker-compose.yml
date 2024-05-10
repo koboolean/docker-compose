@@ -1,0 +1,24 @@
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ee'
+    container_name: gitlab
+    restart: always
+    volumes:
+      - gitlab_data:/var/opt/gitlab
+      - gitlab_log:/var/log/gitlab
+      - gitlab_conf:/etc/gitlab
+      # hostname: 'gitlab.koboolean.com'
+    shm_size: '256m'
+    ports:
+      - '8929:8929'
+      - '443:443'
+      - '2424:2424'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        # Add any other gitlab.rb configuration here, each on its own line
+        external_url 'https://gitlab.koboolean.com'
+
+volumes:
+  gitlab_data:
+  gitlab_log:
+  gitlab_conf:

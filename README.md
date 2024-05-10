@@ -1,4 +1,6 @@
-Docker Compose를 다루는 방법
+## Docker Compose를 다루는 방법
+
+[DOCKER-COMPOSE](https://docs.docker.com/compose/compose-file/)
 
 - restart 옵션은 4가지가 있다.
 	- no: container를 재시작 시키지 않는다. (default)
@@ -6,3 +8,4 @@ Docker Compose를 다루는 방법
 	- always: container를 항상 재시작시킨다. exit code 상관 없이 항상 재시작 된다.
 	- unless-stopped: container를 stop시키기 전 까지 항상 재시작 시킨다.
 
+- shm_size : docker 내부 호스트 메모리 용량 지정
