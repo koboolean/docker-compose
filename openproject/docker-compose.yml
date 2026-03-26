@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  openproject:
+    image: openproject/openproject:17
+    container_name: openproject
+    restart: unless-stopped
+    ports:
+      - "18080:80"
+    environment:
+      # openssl rand -hex 64
+      OPENPROJECT_SECRET_KEY_BASE: "f97de89a84ed4a0f6c03429db31b41fdd50bfc1a7ccb5d41c38663dc445f4b7c5120c690ebefcfa32fdb713d1c92822ff24e22c06d92826a9c5fa12d0d4e32cd"
+      OPENPROJECT_HOST__NAME: "localhost:18080"
+      OPENPROJECT_HTTPS: "false"
+      OPENPROJECT_DEFAULT__LANGUAGE: "ko"
+    volumes:
+      - ./pgdata:/var/openproject/pgdata
+      - ./assets:/var/openproject/assets
