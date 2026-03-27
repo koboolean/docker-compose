@@ -2,4 +2,5 @@
 
 /redmine/files
 /redmine/plugins
-/redmine/postgres
+**/postgres
+.exe
