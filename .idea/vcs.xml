@@ -2,14 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/additionals" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/bestest_markdown_editor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/clipboard_image_paste" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine-slack" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine_git_hosting" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine_issue_checklist" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine_issue_note_list" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine_issue_templates" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/redmine/plugins/redmine_lightbox2" vcs="Git" />
   </component>
 </project>
