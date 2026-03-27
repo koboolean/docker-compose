@@ -4,7 +4,7 @@ FROM redmine:latest
 COPY plugins /usr/src/redmine/plugins
 
 # themes 포함
-COPY themes /usr/src/redmine/public/themes
+COPY themes /usr/src/redmine/themes
 
 # 작업 디렉토리
 WORKDIR /usr/src/redmine
